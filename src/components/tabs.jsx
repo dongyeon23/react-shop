@@ -10,6 +10,7 @@ export function Tabs( {setCart} ) {
 
     return (
     <>
+        <h1>Item List</h1>
         <div>
             <button onClick={()=>setTabs("all")}>All</button>
             <button onClick={()=>setTabs("outer")}>Outer</button>

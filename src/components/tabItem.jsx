@@ -1,6 +1,3 @@
-import { items } from "../assets/data"
-
-
 export function TabItemList({filterdItems, setCart}) {
     return (
         <>
@@ -13,7 +10,7 @@ export function TabItemList({filterdItems, setCart}) {
 }
 function TabItem({item, setCart}) {
 
-    const handleAddToCart = ()=> {
+    const handleAddToCart = () => {
         setCart((prevCart) => [...prevCart, item])
     }
     return (
