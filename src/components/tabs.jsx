@@ -2,8 +2,8 @@ import { useState } from "react"
 import {items} from "../assets/data"
 import { TabItemList } from "./tabItem"
 
+export function Tabs( { handleCount, setToggleLike } ) {
 
-export function Tabs( {setCart} ) {
     const [tabs, setTabs] = useState("all")
     const filterdItems = 
     tabs === "all" ? items:items.filter((item)=>item.category === tabs)
@@ -17,7 +17,8 @@ export function Tabs( {setCart} ) {
             <button onClick={()=>setTabs("top")}>Top</button>
             <button onClick={()=>setTabs("bottom")}>Bottom</button>
         </div>
-        <TabItemList filterdItems={filterdItems} setCart={setCart}/>
+        <TabItemList filterdItems={filterdItems} handleCount={handleCount} setToggleLike={setToggleLike}/>
+        
     </>
     )
 }
