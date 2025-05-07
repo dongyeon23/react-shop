@@ -7,7 +7,6 @@ import { Routes, Route, useNavigate } from "react-router-dom"
 import { Navigate } from "react-router-dom";
 
 function App() {
-  const [toggleLike, setToggleLike] = useState(false)
   const navigateToCart = useNavigate()
 
   // function handleCount(type) {
