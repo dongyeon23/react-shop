@@ -1,8 +1,9 @@
 import { useCart } from "../contexts/CartProvider";
 import { useCount } from "../contexts/CountProvider";
+import { useLike } from "../contexts/LikeProvider";
 
-export function Cart({ item }) {
-    const {cart, setCart}= useCart();
+export function Cart() {
+    const {cart, setCart} = useCart();
 
     const removeCart = () => {
         setCart([])
@@ -16,15 +17,16 @@ export function Cart({ item }) {
             <button onClick={removeCart}>Remove All</button>
             <ul>
                 {cart.map((item) => (
-                    <CartItem key={item.id} addedItem={item} />
+                    <CartItem key={`cart-${item.id}`} addedItem={item} />
                 ))}
             </ul>
         </>
     );
 }
 function CartItem({ addedItem }) {
-    const {cart, setCart}= useCart();
-    const {count}= useCount();
+    const {cart, setCart} = useCart();
+    const {likeItem, handleLike} = useLike();
+    const {count} = useCount();
 
     //delete
     const handleDeleteFunc = () => {
@@ -39,6 +41,7 @@ function CartItem({ addedItem }) {
                     <div>{addedItem.name}</div>
                     <div>{addedItem.price}원</div>
                 </section>
+                <p onClick={() => handleLike(addedItem)}>{likeItem.some(liked => liked.id === addedItem.id) ? "❤️":"🤍"}</p>
                 <button onClick={handleDeleteFunc}>delete</button>
                 <section>
                     <p>{count}</p>
