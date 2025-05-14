@@ -50,3 +50,82 @@ li {
 button {
   color: red;
 }
+
+.header {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  z-index: 1000;
+
+  .header-inner {
+    position: relative; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    height: 100%;
+    box-sizing: border-box;
+
+    .left {
+      display: flex;
+      gap: 16px;
+
+      p {
+        cursor: pointer;
+        font-weight: 500;
+        margin: 0;
+      }
+
+      .search-wrap {
+        display: flex;
+        align-items: center;
+
+        .inputoff {
+          display: none;
+        }
+
+        .inputon {
+          display: inline-block;
+          padding: 4px 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+      }
+    }
+
+    .center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20px;
+      font-weight: bold;
+
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+
+    .right {
+      display: flex;
+      gap: 16px;
+
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+  }
+}
+
+body {
+  margin: 0;
+  padding-top: 60px; 
+}
+body {
+  padding-top: 60px; 
+  margin: 0;
+}
